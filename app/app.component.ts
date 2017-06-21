@@ -1,5 +1,5 @@
 //importar um decorator do angular 2, importado de ....
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 class Task {
     id : number;
@@ -19,6 +19,21 @@ let TASKS:Task[] = [
     {id : 9, name : 'Fazer Exercício'},
     {id : 10, name : 'Pagar contas'},
 ];
+
+
+@Component({
+    selector: 'task-edit',
+    template: `
+        <div *ngIf="task">
+            <input type="text" [(ngModel)]="task.name" />
+        </div>
+    `
+})
+export class TaskEditComponent {
+    //Colcando o Input diz que esta propriedade task pode ser acessado externamente
+    @Input()
+    task : Task;
+}
 
 
 //Decoretor
@@ -42,9 +57,7 @@ let TASKS:Task[] = [
                 {{ o.id }} - {{ o.name }}
             </li>
         </ul>
-        <div *ngIf="selectedTask">
-            <input type="text" [(ngModel)]="selectedTask.name" />
-        </div>
+        <task-edit [task]="selectedTask"></task-edit>
     `
 })
 //Associar este decorator a uma classe relativo ao nome do arquivo 'app.component'

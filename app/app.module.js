@@ -25,7 +25,7 @@ AppModule = __decorate([
         //BrowserModule => adiciona recursor para aplicação poder rodar em um browser
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
         //declarações, componentes que estão no modulo, prepara a visualiza~ção que aparecerá no html
-        declarations: [app_component_1.AppComponent],
+        declarations: [app_component_1.AppComponent, app_component_1.TaskEditComponent],
         //componente que irá iniciar o módulo
         //AppComponent => componente principal 
         bootstrap: [app_component_1.AppComponent]
