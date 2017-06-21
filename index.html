@@ -11,6 +11,7 @@
 
     <script src="systemjs.config.js"></script>
     <script>
+    <!-- importando a pasta app configurado no arquivo systemjs.config.js, automaticamente chamando o arquivo main.js, que faz o platformBrowserDynamic, que por vez faz o bootstrap no modulo -->
         System.import('app').catch(function(err){ console.error(err); });
     </script>
 </head>

@@ -3,12 +3,13 @@
 import {NgModule} from "@angular/core";
 import {BrowserModule} from "@angular/platform-browser";
 import {AppComponent} from "./app.component";
+import {FormsModule} from "@angular/forms";
 
 //Decoretor NgModule
 @NgModule({
     //importações de outros módulos
     //BrowserModule => adiciona recursor para aplicação poder rodar em um browser
-    imports: [BrowserModule],
+    imports: [BrowserModule, FormsModule],
     //declarações, componentes que estão no modulo, prepara a visualiza~ção que aparecerá no html
     declarations: [AppComponent],
     //componente que irá iniciar o módulo
